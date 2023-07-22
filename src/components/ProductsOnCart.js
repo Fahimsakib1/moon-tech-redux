@@ -30,6 +30,8 @@ const ProductsOnCart = ({ product }) => {
                 </div>
                 <div className='flex gap-2 mt-5'>
 
+                    {/* dispatch using action creators */}
+                    
                     {/* <button
                         onClick={() => dispatch(removeFromCart(product))}
                         
