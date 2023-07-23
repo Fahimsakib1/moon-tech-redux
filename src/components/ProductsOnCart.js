@@ -7,15 +7,22 @@ import { removeFromCart } from '../Redux/ActionCreators/productActions';
 
 
 const ProductsOnCart = ({ product }) => {
-    
+
     const dispatch = useDispatch();
 
     return (
         <div>
+
+
+
             <div
                 className='shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
                 key={product._id}
             >
+                <div className='w-[100px] justify-start'>
+                    <p className='w-[40px] py-2 px-2 text-center rounded-full bg-blue-600 text-white font-semibold '>{product.quantity}</p>
+                </div>
+
                 <div className='h-52 w-52 mx-auto'>
                     <img src={product.image} alt={product.model} />
                 </div>
@@ -31,7 +38,7 @@ const ProductsOnCart = ({ product }) => {
                 <div className='flex gap-2 mt-5'>
 
                     {/* dispatch using action creators */}
-                    
+
                     {/* <button
                         onClick={() => dispatch(removeFromCart(product))}
                         
@@ -40,8 +47,8 @@ const ProductsOnCart = ({ product }) => {
                     </button> */}
 
                     <button
-                        onClick={() => dispatch({type: REMOVE_FROM_CART, payload: product})}
-                        
+                        onClick={() => dispatch({ type: REMOVE_FROM_CART, payload: product })}
+
                         className='bg-red-600 rounded-md py-1 px-2 flex-1 text-white text-bold' title="Remove Product">
                         Remove From Cart
                     </button>
